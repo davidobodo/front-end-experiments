@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Front End Challenge</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .bg {
+            position: fixed;
+            height: 100vh;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        .bg.one {
+            width: 100%;
+            background-image: url('beast.jpg');
+        }
+
+        .bg.two {
+            width: 0%;
+            background-image: url('shrek.jpg');
+            border-right: 5px solid black;
+        }
+
+        .range {
+            width: 500px;
+            -webkit-appearance: none;
+            background: rgba(0, 0, 0, 0.8);
+            outline: none;
+            border-radius: 30px;
+            box-shadow: 0 0 0 2px #151515, inset 0 0 5px #000;
+            overflow: hidden;
+            position: fixed;
+            z-index: 100;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .range::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background-color: #00adff;
+            border: 4px solid #222;
+            box-shadow: -310px 0 0 300px #00adff;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="bg one"></div>
+    <div class="bg two"></div>
+    <input class="range" type="range" value="0" min="0" max="100">
+    <script>
+        const range = document.querySelector('.range');
+        const bg_two = document.querySelector('.two');
+        const rangeValue = () => bg_two.style.width = `${range.value}%`;
+        range.addEventListener('mousemove', rangeValue)
+    </script>
+</body>
+
+</html>
