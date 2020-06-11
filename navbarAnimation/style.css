@@ -7,7 +7,9 @@
   height: 100vh;
   width: 70vw;
   background-color: #1e52a6;
-  color: #fff; }
+  color: #fff;
+  transform: translateX(-100vw);
+  transition: transform 0.2s ease-in-out; }
   .sidebar__links {
     padding: 60px; }
     .sidebar__links__link {
@@ -22,7 +24,8 @@
   align-self: center;
   position: fixed;
   right: 30px;
-  top: 30px; }
+  top: 30px;
+  cursor: pointer; }
   .hamburger:before {
     content: '';
     width: 25px;
@@ -37,5 +40,14 @@
     background-color: #000000;
     position: absolute;
     top: 7px; }
+  .hamburger span {
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    transform: translateY(-11px); }
+
+.showNavbar {
+  transform: translateX(0vw); }
 
 /*# sourceMappingURL=style.css.map */

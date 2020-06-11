@@ -11,6 +11,8 @@ $blue_color:#1e52a6;
     width: 70vw;
     background-color: $blue_color;
     color: #fff;
+    transform: translateX(-100vw);
+    transition: transform 0.2s ease-in-out;
 
     &__links{
         padding: 60px;
@@ -31,6 +33,7 @@ $blue_color:#1e52a6;
     position: fixed;
     right: 30px;
     top: 30px;
+    cursor: pointer;
 
     &:before{
         content: '';
@@ -49,4 +52,16 @@ $blue_color:#1e52a6;
         position: absolute;
         top: 7px;
     }
+
+    span{
+        display: inline-block;
+        width: 25px;
+        height: 25px;
+        position: absolute;
+        transform: translateY(-11px);
+    }
+}
+
+.showNavbar{
+    transform: translateX(0vw)
 }
