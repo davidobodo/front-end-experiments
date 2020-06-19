@@ -9,7 +9,7 @@
   background-color: #1e52a6;
   color: #fff;
   transform: translateX(-100vw);
-  transition: transform 0.2s ease-in-out; }
+  transition: transform 1s ease-in-out; }
   .sidebar__links {
     padding: 60px; }
     .sidebar__links__link {

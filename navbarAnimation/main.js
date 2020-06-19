@@ -6,11 +6,14 @@ const links = document.querySelectorAll('.sidebar__links__link')
 const handleShowSidebar = () => {
     sidebar.classList.add('showNavbar')
 
-    links.forEach((element, index) => {
-        setTimeout(() => {
-            element.classList.add('fadeInLeft')
-        }, (100 * index) - (30 * index))
-    })
+    setTimeout(() => {
+        links.forEach((element, index) => {
+            setTimeout(() => {
+                element.classList.add('fadeInRight')
+            }, 70 * index)
+        })
+    }, 1000)
+
 }
 
 const handleHideSidebar = () => {
@@ -18,16 +21,12 @@ const handleHideSidebar = () => {
     links.forEach((element, index) => {
         setTimeout(() => {
             element.classList.add('fadeOutRight')
-            // if (index == (links.length - 1)) {
-            //     console.log(index)
-            //     sidebar.classList.remove('showNavbar')
-            // }
-        }, ((links.length + 1) * 100) - (100 * index))
+        }, 70 * index)
     })
 
     setTimeout(() => {
-
-    })
+        sidebar.classList.remove('showNavbar')
+    }, 70 * (links.length * 3))
 }
 
 

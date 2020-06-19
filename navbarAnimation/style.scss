@@ -12,7 +12,7 @@ $blue_color: #1e52a6;
 	background-color: $blue_color;
 	color: #fff;
 	transform: translateX(-100vw);
-	transition: transform 0.2s ease-in-out;
+	transition: transform 1s ease-in-out;
 
 	&__links {
 		padding: 60px;
@@ -158,6 +158,9 @@ $blue_color: #1e52a6;
 	}
 }
 
+//------------------------------------------------------
+//not yet used
+//------------------------------------------------------
 .animatable {
 	opacity: 0;
 	animation-duration: 0.5s;
