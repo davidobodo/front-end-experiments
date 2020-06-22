@@ -9,10 +9,11 @@ const handleShowSidebar = () => {
     setTimeout(() => {
         links.forEach((element, index) => {
             setTimeout(() => {
+                element.classList.remove('fadeOutRight')
                 element.classList.add('fadeInRight')
             }, 70 * index)
         })
-    }, 1000)
+    }, 500)
 
 }
 
@@ -20,6 +21,7 @@ const handleHideSidebar = () => {
 
     links.forEach((element, index) => {
         setTimeout(() => {
+            element.classList.remove('fadeInRight')
             element.classList.add('fadeOutRight')
         }, 70 * index)
     })

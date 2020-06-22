@@ -12,7 +12,7 @@ $blue_color: #1e52a6;
 	background-color: $blue_color;
 	color: #fff;
 	transform: translateX(-100vw);
-	transition: transform 1s ease-in-out;
+	transition: transform 0.5s ease-in-out;
 
 	&__links {
 		padding: 60px;
@@ -22,7 +22,7 @@ $blue_color: #1e52a6;
 			font-size: 60px;
 			list-style: none;
 			opacity: 0;
-			animation-fill-mode: both;
+			animation-fill-mode: forwards;
 			animation-duration: 1s;
 		}
 	}
@@ -127,7 +127,7 @@ $blue_color: #1e52a6;
 @keyframes fadeInRight {
 	from {
 		opacity: 0;
-		transform: translate3d(15%, 0, 0);
+		transform: translate3d(30%, 0, 0);
 	}
 
 	to {
@@ -154,7 +154,7 @@ $blue_color: #1e52a6;
 
 	to {
 		opacity: 0;
-		transform: translate3d(15%, 0, 0);
+		transform: translate3d(30%, 0, 0);
 	}
 }
 
