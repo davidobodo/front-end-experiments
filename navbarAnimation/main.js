@@ -28,6 +28,8 @@ const handleHideSidebar = () => {
 
     setTimeout(() => {
         sidebar.classList.remove('showNavbar')
+        links.forEach(element => element.classList.remove('fadeOutRight'))
+
     }, 70 * (links.length * 3))
 }
 
