@@ -12,7 +12,7 @@ $blue_color: #1e52a6;
 	background-color: $blue_color;
 	color: #fff;
 	transform: translateX(-100vw);
-	transition: transform 0.5s ease-in-out;
+	transition: transform 500ms ease-in-out;
 
 	&__links {
 		padding: 60px;
@@ -24,6 +24,23 @@ $blue_color: #1e52a6;
 			opacity: 0;
 			animation-fill-mode: forwards;
 			animation-duration: 1s;
+
+			&:nth-child(1){
+				animation-delay: 550ms;
+			}
+			&:nth-child(2){
+				animation-delay: 600ms;
+			}
+			&:nth-child(3){
+				animation-delay: 650ms;
+			}
+			&:nth-child(4){
+				animation-delay: 700ms;
+			}
+			&:nth-child(5){
+				animation-delay: 750ms;
+
+			}
 		}
 	}
 }
