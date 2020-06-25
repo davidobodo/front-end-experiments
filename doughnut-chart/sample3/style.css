@@ -1,3 +1,9 @@
+@keyframes spin {
+  to {
+    transform: rotate(0.5turn); } }
+@keyframes bg {
+  50% {
+    background: #655; } }
 .pie {
   width: 100px;
   height: 100px;
@@ -12,6 +18,6 @@
     background-color: inherit;
     transform-origin: left;
     border-radius: 0 100% 100% 0 / 50%;
-    transform: rotate(0.2turn); }
+    animation: spin 3s linear infinite, bg 6s step-end infinite; }
 
 /*# sourceMappingURL=style.css.map */
