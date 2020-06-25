@@ -1,26 +1,19 @@
-.block {
-    margin: 25px 25px 0 0;
-    background: #394264;
-    border-radius: 5px;
-    float: left;
-    width: 300px;
-    overflow: hidden;
-  }
-  
-  .donut-chart-block {
-    overflow: hidden;
-  }
+
+.wrapper{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
   
   .donut-chart {
     position: relative;
     width: 200px;
     height: 200px;
-    margin: 2rem auto;
-    border-radius: 100%
   }
   
   .donut-chart .center {
-    background: #394264;
+    background: #fff;
     position: absolute;
     top: 30px;
     left: 30px;
@@ -31,15 +24,15 @@
   
   .clip {
     border-radius: 50%;
-    clip: rect(0px, 200px, 200px, 100px);
+    /* clip: rect(0px, 200px, 200px, 100px); */
     height: 100%;
     position: absolute;
     width: 100%;
   }
   
   .item {
-    border-radius: 50%;
-    clip: rect(0px, 100px, 200px, 0px);
+    /* border-radius: 50%; */
+    /* clip: rect(0px, 100px, 200px, 0px); */
     height: 100%;
     position: absolute;
     width: 100%;
@@ -47,16 +40,8 @@
     font-size: 1.5rem;
   }
   
-  #section1 {
-    transform: rotate(0deg);
-  }
-  
   #section1 .item {
     background-color: #E64C65;
-    transform: rotate(76deg);
-  }
-  
-  #section2 {
     transform: rotate(76deg);
   }
   
@@ -65,20 +50,29 @@
     transform: rotate(140deg);
   }
   
-  #section3 {
-    transform: rotate(215deg);
-  }
-  
   #section3 .item {
     background-color: #4FC4F6;
     transform: rotate(113deg);
   }
   
-  #section4 {
-    transform: rotate(-32deg);
-  }
-  
   #section4 .item {
     background-color: #FCB150;
     transform: rotate(32deg);
+  }
+
+
+  #section1 {
+    transform: rotate(0deg);
+  }
+
+  #section2 {
+    transform: rotate(76deg);
+  }
+
+  #section3 {
+    transform: rotate(215deg);
+  }
+
+  #section4 {
+    transform: rotate(-32deg);
   }
