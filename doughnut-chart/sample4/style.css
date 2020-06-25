@@ -8,6 +8,7 @@
 }
 
 .pie__segment{
+    --degrees: calc((var(--offset, 0)/ 100) * 360);
     position: absolute;
     width: 100%;
     height: 100%;
@@ -15,11 +16,12 @@
     transform: 
         translate(0, -50%) 
         rotate(90deg) 
-        rotate(calc(var(--offset, 0) * 1deg));
+        rotate(calc(var(--degrees) * 1deg));
     transform-origin: 50% 100%;
 }
 
 .pie__segment:before{
+    --degrees : calc((var(--value, 45)/100) * 360);
     content: '';
     background: #f00;
     position: absolute;
@@ -27,7 +29,6 @@
     height: 100%;
     transform: 
         translate(0, 100%) 
-        rotate(calc(var(--value,45) * 1deg));
+        rotate(calc(var(--degrees) * 1deg));
     transform-origin: 50% 0;
-
 }
