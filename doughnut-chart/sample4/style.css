@@ -25,7 +25,6 @@
             var(--b) var(--a), 
             var(--b) var(--b), 
             var(--a) var(--b));
-    /* overflow: hidden; */
 }
 
 .pie__segment:before, .pie__segment:after{
