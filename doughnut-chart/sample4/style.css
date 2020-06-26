@@ -8,6 +8,8 @@
 }
 
 .pie__segment{
+    --a: calc(var(--over50, 0) * -100%);
+    --b: calc((1 + var(--over50, 0)) * 100%);
     --degrees: calc((var(--offset, 0)/ 100) * 360);
     position: absolute;
     width: 100%;
@@ -17,6 +19,12 @@
         rotate(90deg) 
         rotate(calc(var(--degrees) * 1deg));
     transform-origin: 50% 100%;
+    clip-path: 
+        polygon(
+            var(--a) var(--a), 
+            var(--b) var(--a), 
+            var(--b) var(--b), 
+            var(--a) var(--b));
     /* overflow: hidden; */
 }
 
