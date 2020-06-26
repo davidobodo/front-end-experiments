@@ -7,6 +7,29 @@
     overflow: hidden;
 }
 
+.pie__segment:nth-child(1){
+    --offset:20; 
+    --value:60; 
+    --over50: 1;
+    --bg:#db0a5b;
+}
+
+.pie__segment:nth-child(2){
+    --offset:80; 
+    --value:5; 
+    --bg:#22a7f0;
+}
+.pie__segment:nth-child(3){
+    --offset:85; 
+    --value:15; 
+    --bg:#2ecc71;
+}
+.pie__segment:nth-child(4){
+    --offset:100; 
+    --value:20; 
+    --bg:#4d05e8;
+}
+
 .pie__segment{
     --a: calc(var(--over50, 0) * -100%);
     --b: calc((1 + var(--over50, 0)) * 100%);
