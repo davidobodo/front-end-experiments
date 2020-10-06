@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            * {
+                box-sizing: border-box;
+            }
+            #right_panel {
+                position: absolute;
+                border-left: solid 3px #ccc;
+                border-right: solid 3px #ccc;
+                width: 100px;
+                height: 100px;
+                background-color: #f0f0f0;
+                cursor: ew-resize;
+            }
+            /* #right-panel:after {
+                content: " ";
+                background-color: #ccc;
+                position: absolute;
+                left: 0;
+                width: 4px;
+                height: 100%;
+                cursor: ew-resize;
+            }
+            #right-panel:before {
+                content: " ";
+                background-color: #ccc;
+                position: absolute;
+                right: 0;
+                width: 4px;
+                height: 100%;
+                cursor: ew-resize;
+            } */
+        </style>
+    </head>
+    <body>
+        <div id="right_panel"></div>
+        <script>
+            const BORDER_SIZE = 4;
+            const panel = document.getElementById("right_panel");
+            let pos;
+
+            panel.addEventListener("mousedown", handleMouseDown, false);
+
+            function handleMouseDown(e) {
+                // console.log(getComputedStyle(panel, "").width);
+                // e.offsetX = how far from the left of the ELEMENT was the mouse clicked
+                // e.x = how far from the left of the VIEWPORT was the mouse clicked
+                const elemWidth = panel.offsetWidth;
+
+                if (e.offsetX < BORDER_SIZE) {
+                    //pos = initial point mouse was clicked down
+                    pos = e.x;
+                    document.addEventListener("mousemove", handleResize, false);
+                }
+            }
+
+            function handleResize(e) {
+                const dx = pos - e.x; //difference between initially point and current mouse point
+                pos = e.x;
+                panel.style.width = parseInt(getComputedStyle(panel, "").width) + dx + "px";
+            }
+
+            document.addEventListener("mouseup", handleMouseUp, false);
+
+            function handleMouseUp(e) {
+                document.removeEventListener("mousemove", handleResize, false);
+            }
+        </script>
+    </body>
+</html>

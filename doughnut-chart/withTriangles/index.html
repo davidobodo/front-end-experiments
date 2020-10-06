@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .root {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .cover {
+        width: 500px;
+        height: 500px;
+        position: relative;
+      }
+      .section {
+        position: absolute;
+        border-top: 200px solid red;
+        border-left: 100px solid transparent;
+        border-right: 100px solid transparent;
+        width: 0;
+      }
+
+      .section:hover {
+        border-top-color: blue;
+      }
+
+      .section:nth-child(1) {
+      }
+      .section:nth-child(2) {
+      }
+      .section:nth-child(3) {
+      }
+      .section:nth-child(4) {
+      }
+      .section:nth-child(5) {
+      }
+    </style>
+  </head>
+  <body class="root">
+    <div class="cover">
+      <div class="section"></div>
+      <div class="section"></div>
+      <div class="section"></div>
+      <div class="section"></div>
+      <div class="section"></div>
+    </div>
+  </body>
+</html>

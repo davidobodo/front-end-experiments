@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            * {
+                box-sizing: border-box;
+            }
+
+            .box {
+                background-color: red;
+                width: 50px;
+                height: 50px;
+                padding: 10px;
+            }
+
+            .text {
+                white-space: nowrap;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="box"></div>
+        <div class="text">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia sequi repudiandae qui id distinctio rem
+            consequuntur tenetur voluptate sed sunt? Possimus maxime tempora vel distinctio eligendi eaque praesentium
+            iste recusandae!
+        </div>
+
+        <script>
+            // MIND YOU, Element MUST BE POSITION ABSOLUTE
+            /*
+            STAGE 1(MOUSE DOWN)
+    DONE-----1. Detect a mouse down
+
+    DONE-----2. only do something if mousedown was made at the edge of the boxes
+            a)FOR RIGHT EDGE
+            DONE-----i. find the width of the box
+            DONE-----ii. find out if mousedown was made around the right edges(i.e the width minus a certain length)
+                        e.g box is 100px, if user clicks on 98px upwards then trigger functionality
+                        iii. find out mouse offset from element and store in a constant
+            DONE-----iv. find out difference between mouseoffset from element and the edge that was clicked
+            b)FOR LEFT EDGE
+            DONE-----i. fond out if mousedown was made just a few pixels from the left edge
+
+    DONE-----3. Find the mouse start X position relative to the document (SAVE SOMEWHERE)
+            
+            STAGE 2 (MOUSE MOVE)
+    DONE-----1. move the mouse 
+    DONE-----2. as you move, you find the mouse x position still relative to the document
+            a) MOVING FROM THE RIGHT SIDE
+                1. POSITIVE DIRECTION
+            DONE-----i. all you need to do is find the difference between the INITIAL MOUSE X POSITION STORED IN THE MOUSEDOWN EVENT
+                    and THE DYNAMICALLY CALCULATED MOUSE X POSITION STORED IN THE MOUSE MOVE
+            DONE-----ii. substract the MOUSE OFFSET FROM ELEMENT from the calculated difference in the above
+                    iii. add the final to the width of the element -IMPORTANT BECAUSE THIS WOULD BE CONVERTED TO DAY
+
+            */
+
+            const box = document.querySelector(".box");
+
+            box.addEventListener("mousedown", handleMouseDown);
+
+            let initialMousePosToDoc;
+            let mouseoffsetFromElemEdge;
+            let elementWidth;
+
+            // parseInt(getComputedStyle(box, "").width)
+
+            function handleMouseDown(e) {
+                //NOTE: THIS IMPLEMENTATION ASSUMES THAT ELEMENT DOES NOT HAVE BORDERS (i.e border: 0px)
+                elementWidth = box.clientWidth;
+
+                //Let click range be about 4px, hence the number 5.
+
+                //-------------------------
+                //Left edge
+                //-------------------------
+                if (e.offsetX < 5) {
+                    // intialMousePos = e.clientX; //Get inital mouse position
+                }
+
+                //-------------------------
+                //Right Edge
+                //-------------------------
+                if (e.offsetX > elementWidth - 5) {
+                    initialMousePosToDoc = e.clientX; //Get initial mouse position
+                    mouseoffsetFromElemEdge = elementWidth - e.offsetX; //To be substracted from final drag width
+
+                    //--------------------------------------------------------------------
+                    //First case scenario - RIGHT POSITIVE DIRECTION MOVEMENT
+                    //--------------------------------------------------------------------
+                    document.addEventListener("mousemove", handleMouseMove);
+                }
+            }
+
+            function handleMouseMove(e) {
+                let difference = e.clientX - initialMousePosToDoc; //Difference between initial and final mouse positions
+                let widthChange = difference - mouseoffsetFromElemEdge;
+
+                const elem = elementWidth + widthChange + "px";
+                console.log(elem);
+                box.style.width = elem;
+            }
+
+            document.addEventListener("mouseup", handleMouseUp);
+
+            function handleMouseUp(e) {
+                document.removeEventListener("mousemove", handleMouseMove);
+            }
+        </script>
+    </body>
+</html>

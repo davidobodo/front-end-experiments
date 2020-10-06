@@ -1,0 +1,51 @@
+    //----------------------------------------------------------------------
+            //I plan to implement a certain kind of animation with the styles below
+            //-----------------------------------------------------------------------
+            //BEGINNING
+
+            // '&:nth-child(1).active ~ .slider': {
+            //     top: '0px',
+
+            //     [theme.breakpoints.up('md')]: {
+            //         top: 'px'
+            //     }
+            // },
+            // '&:nth-child(2).active ~ .slider': {
+            //     top: '50px',
+
+            //     [theme.breakpoints.up('md')]: {
+            //         top: '90px'
+            //     }
+            // },
+            // '&:nth-child(3).active ~ .slider': {
+            //     top: '100px',
+
+            //     [theme.breakpoints.up('md')]: {
+            //         top: '180px'
+            //     }
+            // },
+            // '&:nth-child(4).active ~ .slider': {
+            //     top: '150px',
+
+            //     [theme.breakpoints.up('md')]: {
+            //         top: '270px'
+            //     }
+            // }
+
+
+
+             // '& .slider': {
+        //     position: 'absolute',
+        //     height: '60px',
+        //     width: '100%',
+        //     backgroundColor: theme.customColors.veryLightgreen,
+        //     borderLeft: '5px solid',
+        //     borderColor: theme.customColors.darkGreen,
+        //     zIndex: -1,
+        //     transition: 'top 1s ease-in-out'
+        // }
+
+        //END
+        //----------------------------------------------------------------------
+        //I plan to implement a certain kind of animation with the styles above
+        //-----------------------------------------------------------------------

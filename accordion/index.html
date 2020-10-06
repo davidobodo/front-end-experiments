@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            .accordion-toggle {
+                display: block;
+            }
+
+            .accordion-content {
+                display: none;
+            }
+
+            .accordion-content.active {
+                display: block;
+            }
+        </style>
+    </head>
+    <body>
+        <a href="#content-1" class="accordion-toggle">Show more 1</a>
+        <div class="accordion-content" id="content-1">
+            Content goes here...lorem Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure voluptatibus quod
+            dolore earum aut natus hic sit culpa atque sint sapiente iste, voluptatum sequi dolorem blanditiis aperiam
+            rerum enim eos.
+        </div>
+        <a href="#content-2" class="accordion-toggle">Show more 2</a>
+        <div class="accordion-content" id="content-2">
+            Content goes here... Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos dolor in, excepturi ipsa
+            repellat dolores nostrum exercitationem amet voluptatibus consectetur nobis. Architecto esse saepe ad
+            suscipit nemo quia distinctio nesciunt.
+        </div>
+
+        <script>
+            // Listen for click on the document
+            const headers = document.querySelectorAll(".accordion-toggle");
+
+            headers.forEach((header) => {
+                header.addEventListener("click", toggleAccordion);
+            });
+
+            function toggleAccordion(event) {
+                // Get the target content
+                var content = document.querySelector(event.target.hash);
+
+                console.log(content);
+
+                // If the content is already expanded, collapse it and quit
+                if (content.classList.contains("active")) {
+                    console.log("here");
+                    content.classList.remove("active");
+                    return;
+                }
+
+                // Get all open accordion content, loop through it, and close it
+                var accordions = document.querySelectorAll(".accordion-content.active");
+                for (var i = 0; i < accordions.length; i++) {
+                    accordions[i].classList.remove("active");
+                }
+
+                // Toggle our content
+                content.classList.toggle("active");
+            }
+        </script>
+    </body>
+</html>

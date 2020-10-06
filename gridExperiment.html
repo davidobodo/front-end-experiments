@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>grid Experiment</title>
+    <style>
+        .container{
+            display: grid;
+            border: 1px solid red;
+            min-height: 100vh;
+            grid-template-areas:
+                'Header Header Header Header Header'
+                'Menu Body Body Body Aside'
+                'Menu Footer Footer Footer Footer'
+                ;
+        }
+
+        .item1{
+            grid-area: Header;
+            border: 2px solid red;
+        }
+        .item2{
+            grid-area: Menu;
+            border: 2px solid blue;
+        }
+        .item3{
+            grid-area: Body;
+            border: 2px solid green;
+        }
+        .item4{
+            grid-area: Aside;
+            border: 2px solid yellow;
+        }
+        .item5{
+            grid-area: Footer;
+            border: 2px solid purple;
+        }
+
+    
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="item1">Header</div>
+        <div class="item2">Menu</div>
+        <div class="item3">Body</div>
+        <div class="item4">Aside</div>
+        <div class="item5">Footer</div>
+    </div>
+</body>
+</html>

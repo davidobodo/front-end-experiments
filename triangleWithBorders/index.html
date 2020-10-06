@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            body {
+                height: 100vh;
+                overflow: hidden;
+                display: -webkit-box;
+                display: -moz-box;
+                display: -ms-flexbox;
+                display: -webkit-flex;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                /* color: white; */
+                --ggs: 6;
+            }
+            .gg-shape-triangle {
+                position: relative;
+                width: 22px;
+                height: 17px;
+                border-left: 3px solid transparent;
+                border-bottom: 3px solid;
+                color: red;
+            }
+            .gg-shape-triangle,
+            .gg-shape-triangle::before {
+                display: block;
+                border-right: 3px solid transparent;
+            }
+            .gg-shape-triangle::before {
+                content: "";
+                position: absolute;
+                width: 20px;
+                height: 20px;
+                border-left: 3px solid;
+                border-top: 3px solid;
+                border-bottom: 3px solid transparent;
+                /* transform: rotate(45deg) skew(10deg, 10deg); */
+                left: -2px;
+                bottom: -13px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="gg-shape-triangle"></div>
+    </body>
+</html>

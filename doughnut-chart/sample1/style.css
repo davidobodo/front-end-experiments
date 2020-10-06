@@ -1,78 +1,89 @@
-
-.wrapper{
+.wrapper {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
 }
-  
-  .donut-chart {
-    position: relative;
-    width: 200px;
-    height: 200px;
-  }
-  
-  .donut-chart .center {
-    background: #fff;
-    position: absolute;
-    top: 30px;
-    left: 30px;
-    height: 140px;
-    width: 140px;
-    border-radius: 70px;
-  }
-  
-  .clip {
-    border-radius: 50%;
-    /* clip: rect(0px, 200px, 200px, 100px); */
-    height: 100%;
-    position: absolute;
-    width: 100%;
-  }
-  
-  .item {
-    /* border-radius: 50%; */
-    /* clip: rect(0px, 100px, 200px, 0px); */
-    height: 100%;
-    position: absolute;
-    width: 100%;
-    font-family: monospace;
-    font-size: 1.5rem;
-  }
-  
-  #section1 .item {
-    background-color: #E64C65;
-    transform: rotate(76deg);
-  }
-  
-  #section2 .item {
-    background-color: #11A8AB;
-    transform: rotate(140deg);
-  }
-  
-  #section3 .item {
-    background-color: #4FC4F6;
-    transform: rotate(113deg);
-  }
-  
-  #section4 .item {
-    background-color: #FCB150;
-    transform: rotate(32deg);
-  }
 
+.donut-chart {
+  position: relative;
+  width: 200px;
+  height: 200px;
+}
 
-  #section1 {
-    transform: rotate(0deg);
-  }
+.donut-chart .center {
+  background: #fff;
+  position: absolute;
+  top: 30px;
+  left: 30px;
+  height: 140px;
+  width: 140px;
+  border-radius: 70px;
+}
 
-  #section2 {
-    transform: rotate(76deg);
-  }
+.clip {
+  border-radius: 50%;
+  clip: rect(0px, 200px, 200px, 100px);
+  height: 100%;
+  position: absolute;
+  width: 100%;
+}
 
-  #section3 {
-    transform: rotate(215deg);
-  }
+.item {
+  border-radius: 50%;
+  clip: rect(0px, 100px, 200px, 0px);
+  height: 100%;
+  position: absolute;
+  width: 100%;
+  font-family: monospace;
+  font-size: 1.5rem;
+}
 
-  #section4 {
-    transform: rotate(-32deg);
-  }
+#section1 .item {
+  background-color: #e64c65;
+  transform: rotate(72deg);
+}
+
+#section2 .item {
+  background-color: #11a8ab;
+  transform: rotate(72deg);
+}
+
+#section3 .item {
+  background-color: #4fc4f6;
+  transform: rotate(72deg);
+}
+
+#section4 .item {
+  background-color: #fcb150;
+  transform: rotate(72deg);
+}
+
+#section5 .item {
+  background-color: blue;
+  transform: rotate(72deg);
+}
+
+#section1 {
+  transform: rotate(36deg);
+}
+
+#section2 {
+  transform: rotate(108deg);
+}
+
+#section3 {
+  transform: rotate(180deg);
+}
+
+#section4 {
+  transform: rotate(252deg);
+}
+
+#section5 {
+  transform: rotate(324deg);
+}
+
+.item:hover {
+  background-color: black !important;
+}

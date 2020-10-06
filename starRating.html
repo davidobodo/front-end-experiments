@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Star</title>
+    <style>
+      .star-rating {
+        display: flex;
+        flex-direction: row-reverse;
+        font-size: 1.5em;
+        justify-content: space-around;
+        padding: 0 0.2em;
+        text-align: center;
+        width: 5em;
+      }
+
+      .star-rating input {
+        display: none;
+      }
+
+      .star-rating label {
+        color: #ccc;
+        cursor: pointer;
+      }
+
+      .star-rating :checked ~ label {
+        color: #f90;
+      }
+    </style>
+    <!-- <script>
+        function rate(num){
+            if(num >= 1 && num < 2){
+                //make only label one yellow
+                //add a certain class
+            }
+            if(num >= 2 && num < 3){
+
+            }
+            if(num >= 3 && num <= 4){
+
+            }
+            if(num >= 4 && num < 5){
+
+            }
+            if(num = 5){
+
+            }
+        }
+    </script> -->
+  </head>
+
+  <body>
+    <div class="star-rating">
+      <input type="radio" id="5-stars" name="rating" value="5" />
+      <label for="5-stars" class="star">&#9733;</label>
+      <input type="radio" id="4-stars" name="rating" value="4" />
+      <label for="4-stars" class="star">&#9733;</label>
+      <input type="radio" id="3-stars" name="rating" value="3" checked />
+      <label for="3-stars" class="star">&#9733;</label>
+      <input type="radio" id="2-stars" name="rating" value="2" checked />
+      <label for="2-stars" class="star">&#9733;</label>
+      <input type="radio" id="1-star" name="rating" value="1" checked />
+      <label for="1-star" class="star">&#9733;</label>
+    </div>
+  </body>
+</html>
