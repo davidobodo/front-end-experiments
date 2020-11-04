@@ -1,0 +1,54 @@
+.container {
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background: #ccc;
+}
+
+.c-video {
+    width: 100%;
+    max-width: 800px;
+    position: relative;
+    overflow: hidden;
+}
+
+.c-video:hover .controls {
+    transform: translateY(0px);
+}
+
+.video {
+    width: 100%;
+}
+
+.controls {
+    display: flex;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    flex-wrap: wrap;
+    background: rgba(0, 0, 0, 0.7);
+    transform: translateY(100%) translateY(-10px);
+    transition: all 200ms ease-in-out;
+}
+
+.buttons button {
+    background: none;
+    border: 0px;
+    cursor: pointer;
+    outline: 0;
+}
+
+.orange-bar {
+    height: 10px;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: #000;
+}
+
+.orange-juice {
+    height: 10px;
+    width: 100px;
+    background-color: yellow;
+}
