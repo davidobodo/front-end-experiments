@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            const list = [1, 2, 3, 5, -7, -3, -100, 100, undefined, undefined, null, null];
+
+            //------------------------------------
+            //Method 1
+            //------------------------------------
+            // function sortFn(a, b) {
+            //     if (!a || a < b) return 1;
+
+            //     if (a > b) return -1;
+
+            //     return 0;
+            // }
+
+            //------------------------------------
+            //Method 2
+            //------------------------------------
+            function sortFn(a, b) {
+                if (!a) return 1;
+                return b - a;
+            }
+
+            const sortedListDesc = list.sort(sortFn);
+            const sortedListAsc = [...sortedListDesc].reverse();
+
+            console.log(sortedListDesc);
+            console.log(sortedListAsc);
+        </script>
+    </body>
+</html>
