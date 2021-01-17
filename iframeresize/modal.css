@@ -1,0 +1,242 @@
+/* 00. Reset */
+html {
+    font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    margin: 0;
+    background-color: #fff;
+}
+
+header {
+    display: block;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: #fff;
+    background-color: #69e2c7;
+    font-size: 16px;
+    line-height: 24px;
+    padding: 12px 0;
+    text-align: center;
+}
+
+a {
+    background-color: transparent;
+    text-decoration: none;
+    display: block;
+}
+
+a:active,
+a:hover,
+a:visited {
+    outline: 0;
+    text-decoration: none;
+    color: inherit;
+}
+
+b,
+strong {
+    font-weight: bold;
+}
+
+img {
+    border: 0;
+    vertical-align: middle;
+}
+
+svg:not(:root) {
+    overflow: hidden;
+}
+
+.error {
+    font-weight: bold;
+    color: red;
+}
+
+button,
+input,
+select,
+textarea {
+    color: inherit;
+    font: inherit;
+    margin: 0;
+    width: 100%;
+    height: 40px;
+    box-shadow: 0 7px 14px 0 rgba(49, 49, 93, 0.1), 0 3px 6px 0 rgba(0, 0, 0, 0.08);
+    border-radius: 4px;
+    padding-left: 16px;
+    margin-top: 5px;
+}
+
+.form-group {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.form-group.flex input {
+    flex-basis: 49%;
+}
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+    -webkit-appearance: button;
+    cursor: pointer;
+}
+
+button[disabled],
+html input[disabled] {
+    cursor: default;
+}
+
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+}
+
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+/* 01. Containers */
+.container-fluid {
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.row {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin: 0;
+    height: 100%;
+    /* background: #fff; */
+}
+
+/* 02. Misc */
+.gap-20 {
+    height: 20px;
+    position: relative !important;
+    content: "";
+    width: 100%;
+}
+
+.m-0 {
+    margin: 0;
+}
+
+.pd-h-0 {
+    padding-right: 0;
+    padding-left: 0;
+}
+
+.form-group label {
+    color: #3d464d;
+    font-size: 12px;
+    font-weight: 500;
+    vertical-align: middle;
+    margin-right: 5px;
+    flex-basis: 30%;
+}
+
+.form-group input,
+.form-group span {
+    color: #3d464d;
+    font-size: 16px;
+    font-weight: 500;
+    vertical-align: middle;
+    /* flex-basis: 70%; */
+}
+
+.form-group .ap-input,
+.form-group .ap-hint {
+    border: 1px solid #e5e5e5;
+}
+.profile-container {
+    width: 80%;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.profile-btn {
+    display: inline-block;
+    padding: 15px;
+    color: #fff;
+    background-color: #69e2c7;
+    cursor: pointer;
+}
+
+.profile-btn:hover {
+    background-color: #988e88;
+    color: #69e2c7;
+}
+
+#orderHistory,
+#wallet {
+    /* display: none; */
+}
+
+#orderHistory,
+#wallet {
+    background-color: #fff;
+    height: auto;
+    padding: 15px;
+}
+
+.addcredit-btn {
+    padding: 15px;
+    color: #fff;
+    background-color: #69e2c7;
+    margin: 0;
+}
+
+.addcredit-btn:hover {
+    color: #69e2c7;
+    background-color: #988e88;
+}
+
+#creditcard-list {
+    list-style-type: none;
+    text-align: left;
+}
+.hidden {
+    display: none;
+}
+
+.cclist-item {
+    padding: 10px;
+    border: 1px solid #988e88;
+    margin: 10px 0;
+}
+
+.cclist-delete {
+    float: right;
+    color: #69e2c7;
+    cursor: pointer;
+}
+
+.cclist-delete:hover {
+    color: #988e88;
+}
+
+.cclist-item-date {
+    padding: 0 10px;
+    color: #988e88;
+}
+.showAddress {
+    margin-bottom: 20px;
+    font-size: 11px;
+}
+#add-delivery-address {
+    font-size: 11px;
+}
+
+#algolia-places-listbox-0 {
+    height: 130px;
+    overflow: scroll;
+}
