@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta charset="UTF-8"/>
+        <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
         <title>Document</title>
         <style>
             .accordion-toggle {
@@ -19,19 +19,23 @@
         </style>
     </head>
     <body>
-        <a href="#content-1" class="accordion-toggle">Show more 1</a>
+        <a class="accordion-toggle" href="#content-1">Show more 1</a>
         <div class="accordion-content" id="content-1">
             Content goes here...lorem Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure voluptatibus quod
-            dolore earum aut natus hic sit culpa atque sint sapiente iste, voluptatum sequi dolorem blanditiis aperiam
-            rerum enim eos.
+                                                dolore earum aut natus hic sit culpa atque sint sapiente iste, voluptatum sequi dolorem blanditiis aperiam
+                                                rerum enim eos.
         </div>
-        <a href="#content-2" class="accordion-toggle">Show more 2</a>
+        <a class="accordion-toggle" href="#content-2">Show more 2</a>
         <div class="accordion-content" id="content-2">
             Content goes here... Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos dolor in, excepturi ipsa
-            repellat dolores nostrum exercitationem amet voluptatibus consectetur nobis. Architecto esse saepe ad
-            suscipit nemo quia distinctio nesciunt.
+                                                repellat dolores nostrum exercitationem amet voluptatibus consectetur nobis. Architecto esse saepe ad
+                                                suscipit nemo quia distinctio nesciunt.
         </div>
 
+        <div id="root"></div>
+
+
+        <script src="/promo.js"></script>
         <script>
             // Listen for click on the document
             const headers = document.querySelectorAll(".accordion-toggle");
@@ -63,5 +67,6 @@
                 content.classList.toggle("active");
             }
         </script>
+    </body>
     </body>
 </html>
