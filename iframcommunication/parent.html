@@ -1,41 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <title>Parent Window</title>
-  </head>
-  <body>
-    <h1>Parent Page</h1>
-    <p>Send Message: <button id="message_button">Hi there iframe</button></p>
-    <p>Got Message:</p>
-    <div id="results"></div>
+    <head>
+        <meta charset="utf-8" />
+        <title>Parent Window</title>
+    </head>
+    <body>
+        <h1>Parent Page</h1>
+        <p>Send Message: <button id="message_button">Hi there iframe</button></p>
+        <p>Got Message:</p>
+        <div id="results"></div>
 
-    <iframe src="modal.html" frameborder="0" id="the_iframe"></iframe>
+        <iframe src="modal.html" frameborder="0" id="the_iframe"></iframe>
 
-    <script>
-      // Send a message to the child iframe
-      const iframeEl = document.getElementById("the_iframe");
-      const messageButton = document.getElementById("message_button");
-      let results = document.getElementById("results");
+        <script>
+            // Send a message to the child iframe
+            const iframeEl = document.getElementById("the_iframe");
+            const messageButton = document.getElementById("message_button");
+            let results = document.getElementById("results");
 
-      //When the button is clicked generate a number and send over to our iframe
-      messageButton.addEventListener(
-        "click",
-        function (e) {
-          let message = "This is a random number " + Math.random();
-          iframeEl.contentWindow.postMessage(message, "*");
-        },
-        false
-      );
-
-      //Listen for when a message is sent(particularly from the iframe)
-      window.addEventListener(
-        "message",
-        function (e) {
-          results.innerHTML = e.data;
-        },
-        false
-      );
-    </script>
-  </body>
+            //When the button is clicked generate a number and send over to our iframe
+            messageButton.addEventListener(
+                "click",
+                function (e) {
+                    let message = "This is a random number " + Math.random();
+                    iframeEl.contentWindow.postMessage(message, "*");
+                },
+                false
+            );
+            // fdsk
+            //Listen for when a message is sent(particularly from the iframe)
+            window.addEventListener(
+                "message",
+                function (e) {
+                    results.innerHTML = e.data;
+                },
+                false
+            );
+        </script>
+    </body>
 </html>

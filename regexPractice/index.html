@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <div>HELLO</div>
+
+        <script>
+            const img1 = "http://res.cloudinary.com/joyup/image/upload/v1618336884/htxutda69izn601tyqbf.jpg";
+            const img2 = "http://res.cloudinary.com/joyup/image/upload/c_crop,h_200,w_300/v1618336884/htxutda69izn601tyqbf.jpg";
+            const img3 = "https://atlas-s3-proxy.revelup.com/product/melbas/6481527c3ce07c8ba2eccf5b648277896227c8c700706404320fed968bccc2cfcca65dca42b0c0c98286e1ac2a243ab67d51e9935cc0dc0adce40d0601b98aaf.jpeg";
+
+            const modifyImageUrl = (imageUrl, size = "mobile") => {
+                //check if res.cloudinary.com exists in the url
+                const isFromCloudinary = imageUrl.includes("res.cloudinary.com");
+
+                //If it is not a cloudinary link then just return its
+                if (!isFromCloudinary) return imageUrl;
+                // let modifiedUrl = "";
+
+                const stringMatch = / ^ (https?\:\/\/) $/;
+
+                if (size == "desktop") {
+                } else {
+                }
+            };
+
+            modifyImageUrl(img1);
+        </script>
+        <script></script>
+    </body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/default.min.css" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+        <!-- and it's easy to individually load additional languages -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/languages/go.min.js"></script>
+        <script>
+            hljs.highlightAll();
+        </script>
+        <title>Document</title>
+    </head>
+    <body>
+        <h1>This is a sample simple project to test highlight.js</h1>
+        <div>
+            <pre>
+                <code class="language-javascript">
+                    const listItem = document.createElement("div");
+                    listItem.setAttribute("class", "item");
+            
+                    //Check
+                    const listItemCheck = document.createElement("div");
+                    listItemCheck.setAttribute("class", "check");
+                    listItemCheck.classList.add("uncheck");
+            
+                    //Delete
+                    const listItemDel = document.createElement("div");
+                    listItemDel.setAttribute("class", "delete");
+                    listItemDel.textContent = "×";
+            
+                    //Text
+                    const listItemText = document.createElement("p");
+                    listItemText.innerHTML = storedTodo;
+                    listItemText.setAttribute("class", "text");
+                    listItemText.classList.add("crossed");
+            
+                    //Attaching to DOM
+                    listItem.append(listItemCheck);
+                    listItem.append(listItemText);
+                    listItem.append(listItemDel);
+                    list.appendChild(listItem);
+            
+                    //To delete from list
+                    listItemDel.addEventListener("click", () => {
+                        listItem.style.display = "none";
+            
+                        const itemIndex = todo.findIndex((items) => {
+                            return items === storedTodo;
+                        });
+            
+                        todo.splice(itemIndex, 1);
+                        localStorage.setItem("nuelTodo", todo);
+                    });
+            
+                    //To cross or ""uncross.
+                    listItemCheck.addEventListener("click", () => {
+                        listItemCheck.classList.toggle("uncheck");
+                        listItemText.classList.toggle("crossed");
+                    });
+                </code>
+            </pre>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+
+        <link rel="stylesheet" href="./otslider.css" />
+
+        <style>
+            .my-box {
+                height: 500px;
+                background-color: red;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="ot-slider">
+            <div>
+                <div class="my-box">Hello dear</div>
+            </div>
+            <div>
+                <div class="my-box">Hello dear</div>
+            </div>
+            <div>
+                <div class="my-box">Hello dear</div>
+            </div>
+            <div>
+                <div class="my-box">Hello dear</div>
+            </div>
+            <div>
+                <div class="my-box">Hello dear</div>
+            </div>
+            <div>
+                <div class="my-box">Hello dear</div>
+            </div>
+        </div>
+
+        <script src="./otslider.js"></script>
+
+        <script>
+            var otslider = new OTSlider();
+            otslider.init({
+                // element: document.getElementById("ot-slider"),
+                // custom prev & next buttons
+                prevButton: "&laquo;",
+                nextButton: "&raquo;",
+                // shows prev & next buttons or not
+                showPrevNext: true,
+                // shows pagination controls
+                showNav: true,
+                // uses rounded buttons
+                roundButtons: true,
+                // uses numeric pagination
+                numericNav: true,
+                // enables touch swipe events
+                swipe: true
+            });
+        </script>
+    </body>
+</html>
