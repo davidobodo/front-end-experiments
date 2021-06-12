@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+
+        <link rel="stylesheet" href="./style.css" />
+
+        <style>
+            .container {
+                width: 500px;
+                height: 500px;
+                overflow: hidden;
+            }
+
+            ul {
+                position: relative;
+                transition: transform 250ms ease-in-out;
+            }
+
+            li {
+                width: 500px;
+                height: 500px;
+                list-style: none;
+                position: absolute;
+            }
+
+            li:nth-child(1) {
+                background-color: red;
+            }
+            li:nth-child(2) {
+                background-color: green;
+            }
+            li:nth-child(3) {
+                background-color: yellow;
+            }
+
+            .dots {
+                display: flex;
+            }
+
+            .dots .dot {
+                width: 10px;
+                height: 10px;
+                background-color: rgba(0, 0, 0, 0.2);
+                border-radius: 50%;
+                margin-right: 10px;
+            }
+
+            .dots .dot.current-slide {
+                background-color: black;
+            }
+
+            .is-hidden {
+                display: none;
+            }
+        </style>
+    </head>
+    <body>
+        <section>
+            <button class="back">back</button>
+            <button class="forward">forward</button>
+            <div class="container">
+                <ul class="carousel__track">
+                    <li class="carousel__slide current-slide"></li>
+                    <li class="carousel__slide"></li>
+                    <li class="carousel__slide"></li>
+                </ul>
+            </div>
+
+            <div class="dots">
+                <div class="dot current-slide"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+            </div>
+        </section>
+
+        <!-- <script src="./main.js"></script> -->
+
+        <script>
+            const track = document.querySelector(".carousel__track");
+            const slides = Array.from(track.children);
+            const prevButton = document.querySelector(".back");
+            const nextButton = document.querySelector(".forward");
+            const dotsNav = document.querySelector(".dots");
+            const dots = Array.from(dotsNav.children);
+
+            const slideWidth = slides[0].getBoundingClientRect().width;
+
+            const setSlidePostion = (slide, index) => {
+                slide.style.left = slideWidth * index + "px";
+            };
+
+            const moveToSlide = (track, currentSlide, targetSlide) => {
+                track.style.transform = `translateX(-${targetSlide.style.left})`;
+                currentSlide.classList.remove("current-slide");
+                targetSlide.classList.add("current-slide");
+            };
+
+            const updateDots = (currentDot, targetDot) => {
+                currentDot.classList.remove("current-slide");
+                targetDot.classList.add("current-slide");
+            };
+
+            const hideShowArrows = (slides, prevButton, nextButton, targetIndex) => {
+                if (targetIndex === 0) {
+                    prevButton.classList.add("is-hidden");
+                    nextButton.classList.remove("is-hidden");
+                } else if (targetIndex === slides.length - 1) {
+                    nextButton.classList.add("is-hidden");
+                    prevButton.classList.remove("is-hidden");
+                } else {
+                    nextButton.classList.remove("is-hidden");
+                    prevButton.classList.remove("is-hidden");
+                }
+            };
+
+            slides.forEach(setSlidePostion);
+
+            nextButton.addEventListener("click", (e) => {
+                const currentSlide = track.querySelector(".current-slide");
+                const nextSlide = currentSlide.nextElementSibling;
+                const currentDot = dotsNav.querySelector(".current-slide");
+                const nextDot = currentDot.nextElementSibling;
+                const nextIndex = slides.findIndex((slide) => slide === nextSlide);
+
+                moveToSlide(track, currentSlide, nextSlide);
+                updateDots(currentDot, nextDot);
+                hideShowArrows(slides, prevButton, nextButton, nextIndex);
+            });
+
+            prevButton.addEventListener("click", (e) => {
+                const currentSlide = track.querySelector(".current-slide");
+                const prevSlide = currentSlide.previousElementSibling;
+                const currentDot = dotsNav.querySelector(".current-slide");
+                const prevDot = currentDot.previousElementSibling;
+                const prevIndex = slides.findIndex((slide) => slide === prevSlide);
+
+                moveToSlide(track, currentSlide, prevSlide);
+                updateDots(currentDot, prevDot);
+                hideShowArrows(slides, prevButton, nextButton, prevIndex);
+            });
+
+            dotsNav.addEventListener("click", (e) => {
+                const targetDot = e.target.closest(".dot");
+
+                if (!targetDot) return;
+                const currentSlide = track.querySelector(".current-slide");
+                const currentDot = dotsNav.querySelector(".current-slide");
+
+                const targetIndex = dots.findIndex((dot) => dot === targetDot);
+                const targetSlide = slides[targetIndex];
+
+                moveToSlide(track, currentSlide, targetSlide);
+                updateDots(currentDot, targetDot);
+                hideShowArrows(slides, prevButton, nextButton, targetIndex);
+            });
+        </script>
+    </body>
+</html>
