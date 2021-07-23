@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            ul {
+                list-style: none;
+                display: flex;
+                position: relative;
+                padding-left: 0px;
+            }
+
+            .link {
+                margin-right: 20px;
+                font-size: 30px;
+                background-color: yellow;
+                padding: 20px;
+            }
+
+            .bar {
+                position: absolute;
+                width: 100px;
+                height: 2px;
+                background-color: black;
+                bottom: 0;
+                transition: all 200ms ease-in-out;
+            }
+        </style>
+    </head>
+    <body>
+        <ul>
+            <li class="link" data-val="1">first</li>
+            <li class="link" data-val="2">second</li>
+            <li class="link" data-val="3">third</li>
+            <li class="link" data-val="4">fourth</li>
+            <li class="bar"></li>
+        </ul>
+
+        <script>
+            const linkWrapper = document.querySelector("ul");
+            const links = document.querySelectorAll(".link");
+            const bar = document.querySelector(".bar");
+            const dictionary = {};
+            links.forEach((item, i) => {
+                const position = Object.values(dictionary).reduce((total, a) => {
+                    if (i !== 0) {
+                        return a.width + total + 20;
+                    } else {
+                        return a.width + total;
+                    }
+                }, 0);
+                dictionary[item.dataset.val] = {
+                    width: item.getBoundingClientRect().width,
+                    position: position
+                };
+            });
+
+            console.log(dictionary);
+            linkWrapper.addEventListener("click", (e) => {
+                const target = e.target.closest(".link");
+
+                if (!target) return;
+
+                const selected = target.dataset.val;
+
+                console.log(bar.style);
+                bar.style.width = dictionary[selected].width + "px";
+                bar.style.left = dictionary[selected].position + "px";
+            });
+        </script>
+    </body>
+</html>

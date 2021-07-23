@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+            }
+            nav {
+                background-color: rgba(0, 0, 0, 0.5);
+                height: 85px;
+                display: flex;
+                position: fixed;
+                top: 0px;
+                left: 0px;
+                right: 0px;
+                transition: top 300ms ease-in-out;
+            }
+
+            .nav-animate {
+                top: -85px;
+            }
+
+            .nav-sticky {
+                top: 0px;
+                z-index: 10;
+            }
+
+            .body {
+                height: 500vh;
+                background-color: green;
+            }
+        </style>
+    </head>
+    <body>
+        <nav>
+            <ul>
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+            </ul>
+        </nav>
+
+        <main class="body"></main>
+
+        <script>
+            $(function () {
+                var scroll = $(document).scrollTop();
+                var navHeight = $("nav").outerHeight();
+
+                $(window).scroll(function () {
+                    var scrolled = $(document).scrollTop();
+
+                    console.log(scrolled, navHeight, scroll);
+
+                    if (scrolled > navHeight) {
+                        $("nav").addClass("nav-animate");
+                    } else {
+                        $("nav").removeClass("nav-animate");
+                    }
+
+                    if (scrolled > scroll) {
+                        $("nav").removeClass("nav-sticky");
+                    } else {
+                        $("nav").addClass("nav-sticky");
+                    }
+                });
+            });
+        </script>
+    </body>
+</html>
